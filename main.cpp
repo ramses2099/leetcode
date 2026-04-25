@@ -6,6 +6,7 @@ using namespace std;
 class Solution
 {
 public:
+    //28. Find the Index of the First Occurrence in a String
     int strStr(string haystack, string needle)
     {
         return 0;
@@ -25,6 +26,8 @@ int main()
     // map<string, int> map_String_Int = {{"apple", 5}, {"banana", 3}, {"orange", 7}};
 
     // debug(Char, arr, Bitset, map_String_Int);
+
+    //28. Find the Index of the First Occurrence in a String
 
     string haystack = "";
     string needle = "";
