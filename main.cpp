@@ -6,10 +6,35 @@ using namespace std;
 class Solution
 {
 public:
-    //28. Find the Index of the First Occurrence in a String
-    int strStr(string haystack, string needle)
+    int searchInsert(vector<int> &nums, int target)
     {
-        return 0;
+        int low = 0;
+        int high = nums.size();
+
+        if (target > nums[high-1])
+        {
+            return high;
+        }
+
+        while (low <= high)
+        {
+            int mid = (low + high) / 2;
+
+            if (nums[mid] == target)
+            {
+                return mid;
+            }
+            else if (nums[mid] < target)
+            {
+                low = mid + 1;
+            }
+            else
+            {
+                high = mid - 1;
+            }
+        }
+
+        return low;
     }
 };
 
@@ -27,14 +52,26 @@ int main()
 
     // debug(Char, arr, Bitset, map_String_Int);
 
-    //28. Find the Index of the First Occurrence in a String
+    // 35. Search Insert Position
 
-    string haystack = "";
-    string needle = "";
-    int output = 0;
+    // test case 1
+    // vector<int> nums = {1, 3, 5, 6};
+    // int target = 5;
+    // int output = 2;
+
+    // test case 2
+    // vector<int> nums = {1, 3, 5, 6};
+    // int target = 2;
+    // int output = 1;
+
+    // test case 3
+    vector<int> nums = {1, 3, 5, 6};
+    int target = 7;
+    int output = 4;
 
     class Solution stion;
-    int rs = stion.strStr(haystack, needle);
+    int rs = stion.searchInsert(nums, target);
+    cout << "return index: " << rs << " output: " << output << endl;
     assert((rs == output));
 
     return EXIT_SUCCESS;
